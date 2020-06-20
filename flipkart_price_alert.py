@@ -6,9 +6,9 @@ from datetime import datetime
 import re
 
 #Product url link
-url = 'https://www.flipkart.com/satyam-weaves-paisley-banarasi-cotton-silk-saree/p/itmex2zuw8w4g7rr'
+url = input("Enter URL of product")
 #Desired Price, the price you want ot buy
-desired_price = 400
+desired_price = int(input("Desired price in which you want alert"))
 
 pnmsg = "Below Rs. " + str(desired_price) + " you can get your Boat Headphone."
 
