@@ -19,10 +19,16 @@ def check_price():
 
     heading = soup.find('h1').text.strip()
     #print(heading)
+    page1 = r.get(URL)
+    soup = bs(page1.content, "html.parser")
+    price = price[1:]
+    price_ar = price.split(",")
+    price = ''.join(price_ar)
+    price = int(price)
 
-    pattern = re.compile(r'₹\d+')
-    search = pattern.findall(soup.prettify())
-    price = int(search[0][1:])
+    #pattern = re.compile(r'₹\d+')
+    #search = pattern.findall(soup.prettify())
+   # price = int(search[0][1:])
 
     # VARIABLES FOR SENDING MAIL AND PUSH NOTIFICATION---------------------------------------
 
@@ -38,14 +44,14 @@ def check_price():
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login('senderemailaddress', 'emailpassword')
+        server.login('aman765180@gmail.com', 'Neesu@123')
         subject = "Price of Boat Headphone has fallen down below Rs. " + str(desired_price)
         body = "Hey Rahul! \n The price of Boat Headphone on AMAZON has fallen down below Rs." + str(
             desired_price) + ".\n So, hurry up & check the amazon link right now : " + url
         msg = f"Subject: {subject} \n\n {body} "
         server.sendmail(
-            'senderemailaddress',
-            'recieveremailaddress', msg
+            'aman765180@gmail.com',
+            'Abhishek7071631646@gmail.com', msg
         )
         print("HEY Rahul, EMAIL HAS BEEN SENT SUCCESSFULLY.")
         server.quit()
