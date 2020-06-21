@@ -5,6 +5,7 @@ from notify_run import Notify
 from datetime import datetime
 import re
 import requests as r
+from bs4 import BeautifulSoup as bs
 
 #Product url link
 url = input("Enter URL of product")
