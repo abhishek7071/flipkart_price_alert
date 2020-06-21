@@ -20,7 +20,7 @@ def check_price():
 
     heading = soup.find('h1').text.strip()
     #print(heading)
-    page1 = r.get(URL)
+    page1 = r.get(url)
     soup = bs(page1.content, "html.parser")
     price = price[1:]
     price_ar = price.split(",")
