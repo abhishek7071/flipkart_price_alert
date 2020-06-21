@@ -23,6 +23,7 @@ def check_price():
     #print(heading)
     page1 = r.get(url)
     soup = bs(page1.content, "html.parser")
+    price = soup.find("div", {"class": "_3qQ9m1"}).text
     price = price[1:]
     price_ar = price.split(",")
     price = ''.join(price_ar)
