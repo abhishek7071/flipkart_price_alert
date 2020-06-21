@@ -4,6 +4,7 @@ import requests, time, smtplib
 from notify_run import Notify
 from datetime import datetime
 import re
+import requests as r
 
 #Product url link
 url = input("Enter URL of product")
