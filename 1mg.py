@@ -42,3 +42,16 @@ for j in soup.find_all('div',{'class':'FactBox__rowContent__2YA1r FactBox__flexC
    #  Manu2 = 
 #Manu=soup.find("div",{"class":"j9P_K col-3"}).text
 #print(Man
+#practo
+link="https://www.practo.com/medicine-info/search?drug=Diclowin"                                          #link ="https://www.1mg.com/search/all?filter=true&name=Combiflam"                                        
+html_page = r.get(link)                              
+soup = BeautifulSoup(html_page.content,'html.parser')
+#print(soup.prettify())
+for i in soup.find_all("div" , {"class":"shdzcg-1 cjDIVa"}):
+	link = i.find('a',href=True)
+	if link is None:
+		continue
+	link1 = link['href']
+	print(link['href'])
+	print(link1)
+	break
