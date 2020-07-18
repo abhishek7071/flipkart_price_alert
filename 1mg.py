@@ -55,3 +55,7 @@ for i in soup.find_all("div" , {"class":"shdzcg-1 cjDIVa"}):
 	print(link['href'])
 	print(link1)
 	break
+soup = bs4.BeautifulSoup(html_page.content,"html.parser")
+price=soup.find("div" , {"class": "s13j2pak-2 hfenSr"}).text
+price = price[1:]
+print(price)
